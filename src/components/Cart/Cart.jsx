@@ -15,6 +15,17 @@ const Cart = () => {
         setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0));
     }, [cart])
 
+    const ChangeQtyHandler = (e) => {
+        dispatch(
+            {
+                type: "CHANGE_CART_QTY",
+                payload:{
+                    id: product.id,
+                    qty:e.target.value
+                }
+            }
+        )
+    }
     const RemoveFromCartHandler = () => {
         dispatch(
             {
@@ -45,9 +56,9 @@ const Cart = () => {
                                         <Rating rating={product.rating}/>
                                     </Col>
                                     <Col md={2}>
-                                        <FormControl as="select" value={product.qty}>
+                                        <FormControl as="select" value={product.qty} onChange={ChangeQtyHandler}>
                                             {[...Array(product.inStock).keys()].map((x) => (
-                                                <option key={x + 1} > {x + 1}</option>
+                                                <option key={x + 1}> {x + 1}</option>
                                             ))}
                                         </FormControl>
                                     </Col>

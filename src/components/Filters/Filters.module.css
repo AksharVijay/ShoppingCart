@@ -16,3 +16,20 @@
 .title {
     font-size: 30px;
 }
+
+
+@media (max-width: 771px){
+    .filters{
+        width: 40%;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .filters > span {
+        font-size: 10px;
+    }
+
+    .title {
+        font-size: 18px !important;
+    }
+}

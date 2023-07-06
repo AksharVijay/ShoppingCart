@@ -19,3 +19,9 @@
     padding: 0 20px;
     flex-direction: column;
 }
+
+@media (max-width: 771px) {
+    .search {
+        display: none !important;
+    }
+}
